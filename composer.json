@@ -1,6 +1,11 @@
 {
-  "autoload": {
-    "classmap": ["models/"],
-    "files": ["config.php"]
-  }
+    "name": "atboo/iti-php-project",
+    "autoload": {
+        "classmap": ["models/", "models/controllers", "models/Trats"],
+        "files": ["src/conf.php"],
+        "psr-4": {
+            "Atboo\\ItiPhpProject\\": "src/"
+        }
+    },
+    "require": {}
 }

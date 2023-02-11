@@ -7,4 +7,13 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'CreditCard' => $baseDir . '/models/controllers/CreditCard.php',
+    'DB_con' => $baseDir . '/models/controllers/DB_con.php',
+    'Db' => $baseDir . '/models/controllers/Db.php',
+    'Download' => $baseDir . '/models/controllers/Download.php',
+    'MakeOrder' => $baseDir . '/models/controllers/MakeOrder.php',
+    'Payment' => $baseDir . '/models/controllers/Payment.php',
+    'Route' => $baseDir . '/models/controllers/Route.php',
+    'Table_Handler' => $baseDir . '/models/controllers/Table_Handler.php',
+    'URI' => $baseDir . '/models/Trats/URI.php',
 );

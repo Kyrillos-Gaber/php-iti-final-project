@@ -7,16 +7,41 @@ namespace Composer\Autoload;
 class ComposerStaticInit40e8a39f026175a1a4cc26cb50a98827
 {
     public static $files = array (
-        'cfe4039aa2a78ca88e07dadb7b1c6126' => __DIR__ . '/../..' . '/config.php',
+        'd91ad22a5a9eba8c53ccc459bb331978' => __DIR__ . '/../..' . '/src/conf.php',
+    );
+
+    public static $prefixLengthsPsr4 = array (
+        'A' => 
+        array (
+            'Atboo\\ItiPhpProject\\' => 20,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Atboo\\ItiPhpProject\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'CreditCard' => __DIR__ . '/../..' . '/models/controllers/CreditCard.php',
+        'DB_con' => __DIR__ . '/../..' . '/models/controllers/DB_con.php',
+        'Db' => __DIR__ . '/../..' . '/models/controllers/Db.php',
+        'Download' => __DIR__ . '/../..' . '/models/controllers/Download.php',
+        'MakeOrder' => __DIR__ . '/../..' . '/models/controllers/MakeOrder.php',
+        'Payment' => __DIR__ . '/../..' . '/models/controllers/Payment.php',
+        'Route' => __DIR__ . '/../..' . '/models/controllers/Route.php',
+        'Table_Handler' => __DIR__ . '/../..' . '/models/controllers/Table_Handler.php',
+        'URI' => __DIR__ . '/../..' . '/models/Trats/URI.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit40e8a39f026175a1a4cc26cb50a98827::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit40e8a39f026175a1a4cc26cb50a98827::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit40e8a39f026175a1a4cc26cb50a98827::$classMap;
 
         }, null, ClassLoader::class);

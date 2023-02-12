@@ -24,7 +24,8 @@ return $result;
 // Function for registration
 	public function registration($fname,$uname,$uemail,$pasword)
 	{
-	$ret=mysqli_query($this->dbh,"insert into tblusers(FullName,Username,UserEmail,Password) values('$fname','$uname','$uemail','$pasword')");
+	// $ret=mysqli_query($this->dbh,"insert into user(email,password) values('$uemail','$pasword')");
+	$ret=mysqli_query($this->dbh,"insert into user(fullName,userName,email,password) values('$fname','$uname','$uemail','$pasword')");
 	return $ret;
 	}
 

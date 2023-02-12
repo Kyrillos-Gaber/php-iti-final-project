@@ -1,13 +1,18 @@
 <?php
 session_start();
+require_once("../../../../vendor/autoload.php");
+// require_once("../../../conf.php");
+// require_once('./models/controllers/DB_con.php');
+
+// $_SESSION['uid'] = "";
+
 if (isset($_SESSION["admin_name"])) {
   header("location:index.php");
 }
 // include Function  file
-include_once('function.php');
 // Object creation
 $usercredentials = new DB_con();
-$connect = mysqli_connect("localhost", "root", "", "userdb");
+$connect = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 if (isset($_POST['signin'])) {
   // Posted Values
@@ -17,7 +22,7 @@ if (isset($_POST['signin'])) {
   // check variable of database 
   $name = mysqli_real_escape_string($connect, $_POST["username"]);
   $password = md5(mysqli_real_escape_string($connect, $_POST["password"]));
-  $sql = "Select * from tblusers where Username = '" . $name . "' and Password = '" . $password . "'";
+  $sql = "Select * from user where userName = '" . $name . "' and password = '" . $password . "'";
   $result = mysqli_query($connect, $sql);
   $user = mysqli_fetch_array($result);
   if ($user) {

@@ -1,10 +1,12 @@
 <?php
 session_start();
-if(strlen($_SESSION['uid'])=="")
+require_once("../../../../vendor/autoload.php");
+if(strlen($_SESSION['uid']) == "")
 {
   header('location:logout.php');
 } else {
-
+  header('location: ../payment');
+  // exit();
 ?>
 
 <!DOCTYPE html>

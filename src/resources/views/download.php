@@ -1,5 +1,6 @@
 <?php
 //  require_once('../../conf.php'); 
+require_once("../../../vendor/autoload.php");
 
 define('extintion_path','jpeg');
 if($_POST){

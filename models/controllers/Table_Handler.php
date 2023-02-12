@@ -41,7 +41,7 @@ Class Table_Handler implements Db
   }
 
   public function insert(string $values, string $tb_rows) {
-    $sql = " INSERT INTO {$this->table} ({$tb_rows}) VALUES ({}) ";
+    $sql = " INSERT INTO `{$this->table}` ($tb_rows) VALUES ($values) ;";
     return (mysqli_query($this->link, $sql)) ? "SUCCESS" : mysqli_error($this->link) ; 
   }
 

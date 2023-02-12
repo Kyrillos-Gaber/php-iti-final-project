@@ -10,7 +10,7 @@ class MakeOrder
 
   public function newOrder($is_valid, $user_id) {
     if ($is_valid) {
-      $this->table->insert("0, {$user_id}", "download_count, user_id");
+      $this->table->insert("'0', '{$user_id}'", "'download_count', 'user_id'");
     }
   }
 
